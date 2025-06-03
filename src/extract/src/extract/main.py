@@ -2,14 +2,14 @@ import os
 import sys
 
 
-def main() -> str:
+def main() -> None:
     """Entry point for running the programm"""
 
     env = os.getenv("ENVIRONMENT", "default")
-    return f"Starting extraction in environment: {env}"
+    print(f"Starting extraction in environment: {env}")
 
 
 if __name__ == "__main__":
-    print(main())
+    main()
 
     sys.exit(0)
