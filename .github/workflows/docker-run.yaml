@@ -21,4 +21,4 @@ jobs:
           image: ${{ env.REGISTRY }}/${{ env.EXTRACT_IMAGE_NAME }}:latest
           run: /app/.venv/bin/extract-pipeline
           options: >
-            -e ENVIRONMENT=MY_ENV
+            -e ENVIRONMENT=${{ vars.ENVIRONMENT }}
