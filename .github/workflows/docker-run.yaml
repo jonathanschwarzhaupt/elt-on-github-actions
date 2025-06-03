@@ -20,3 +20,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           image: ${{ env.REGISTRY }}/${{ env.EXTRACT_IMAGE_NAME }}:latest
           run: /app/.venv/bin/extract-pipeline
+          options: >
+            -e ENVIRONMENT=MY_ENV
