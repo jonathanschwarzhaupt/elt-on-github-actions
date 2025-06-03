@@ -1,6 +1,6 @@
 [project]
 name = "extract-app"
-version = "0.1.1"
+version = "0.1.2"
 description = "Extract package for pulling data from a fictional system"
 readme = "README.md"
 authors = [

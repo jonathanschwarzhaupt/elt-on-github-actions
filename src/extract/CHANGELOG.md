@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/jonathanschwarzhaupt/elt-on-github-actions/compare/extract-v0.1.1...extract-v0.1.2) (2025-06-03)
+
+
+### Bug Fixes
+
+* **extract:** change main and tests to allow for 0 exit code ([#9](https://github.com/jonathanschwarzhaupt/elt-on-github-actions/issues/9)) ([3adcedd](https://github.com/jonathanschwarzhaupt/elt-on-github-actions/commit/3adceddaad07bcdfd2327d7390390898b5c850bf))
+
 ## [0.1.1](https://github.com/jonathanschwarzhaupt/elt-on-github-actions/compare/extract-v0.1.0...extract-v0.1.1) (2025-06-03)
 
 
