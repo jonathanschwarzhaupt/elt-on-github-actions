@@ -1,5 +1,5 @@
 [project]
-name = "extract"
+name = "extract-app"
 version = "0.0.0"
 description = "Extract package for pulling data from a fictional system"
 readme = "README.md"
@@ -7,9 +7,7 @@ authors = [
   { name = "Jonathan Schwarzhaupt", email = "jonathan.schwarzhaupt@email.com" },
 ]
 requires-python = ">=3.13"
-dependencies = [
-    "pandas>=2.2.3",
-]
+dependencies = ["pandas>=2.2.3"]
 
 [project.scripts]
 extract = "extract.main:main"
@@ -22,8 +20,4 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [dependency-groups]
-dev = [
-    "pytest>=8.4.0",
-    "pytest-cov>=6.1.1",
-    "ruff>=0.11.12",
-]
+dev = ["pytest>=8.4.0", "pytest-cov>=6.1.1", "ruff>=0.11.12"]
