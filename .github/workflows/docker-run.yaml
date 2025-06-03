@@ -1,0 +1,22 @@
+name: Run a Docker Image
+
+on: workflow_dispatch
+
+env:
+  REGISTRY: ghcr.io
+  EXTRACT_IMAGE_NAME: ${{ github.repository_owner }}/extract-app
+
+jobs:
+  run-extract:
+    name: Run Extract Docker container
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run the extract container
+        uses: addnab/docker-run-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          image: ${{ env.REGISTRY }}/${{ env.EXTRACT_IMAGE_NAME }}:latest
+          run: /app/.venv/bin/extract-pipeline
