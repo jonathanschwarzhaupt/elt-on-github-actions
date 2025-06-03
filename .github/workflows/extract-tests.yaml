@@ -48,7 +48,7 @@ jobs:
 
       - name: Run backend tests
         run: |
-          uv run pytest tests/ -v --cov=src/extract --cov-report=xml --cov-fail-under=75
+          uv run pytest tests/ -v --cov=src/extract --cov-report=xml --cov-fail-under=80
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
