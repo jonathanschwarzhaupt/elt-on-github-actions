@@ -1,4 +1,5 @@
 import os
+import sys
 
 
 def main() -> str:
@@ -8,9 +9,7 @@ def main() -> str:
     return f"Starting extraction in environment: {env}"
 
 
-# Comment to trigger CI
-# Comment to trigger CI
-
-
 if __name__ == "__main__":
     print(main())
+
+    sys.exit(0)
