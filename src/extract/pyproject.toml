@@ -10,7 +10,7 @@ requires-python = ">=3.13"
 dependencies = ["pandas>=2.2.3"]
 
 [project.scripts]
-extract = "extract.main:main"
+extract-pipeline = "extract.main:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/extract"]
