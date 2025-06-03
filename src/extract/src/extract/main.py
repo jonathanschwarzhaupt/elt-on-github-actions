@@ -1,10 +1,12 @@
 import os
 
 
-def main() -> None:
+def main() -> str:
+    """Entry point for running the programm"""
+
     env = os.getenv("ENVIRONMENT", "default")
-    print(f"Starting extraction in environment: {env}")
+    return f"Starting extraction in environment: {env}"
 
 
 if __name__ == "__main__":
-    main()
+    print(main())
