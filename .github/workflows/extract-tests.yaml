@@ -14,7 +14,7 @@ jobs:
         id: filter
         with:
           filters: |
-            backend:
+            extract:
               - 'src/extract/**'
               - '.github/workflows/extract-tests.yaml'
 
