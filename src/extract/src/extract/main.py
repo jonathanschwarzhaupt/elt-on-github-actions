@@ -9,6 +9,7 @@ def main() -> str:
 
 
 # Comment to trigger CI
+# Comment to trigger CI
 
 
 if __name__ == "__main__":
