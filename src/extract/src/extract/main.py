@@ -8,5 +8,8 @@ def main() -> str:
     return f"Starting extraction in environment: {env}"
 
 
+# Comment to trigger CI
+
+
 if __name__ == "__main__":
     print(main())
