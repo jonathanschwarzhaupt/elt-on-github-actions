@@ -1,0 +1,17 @@
+[tools]
+duckdb = "latest"
+pre-commit = "latest"
+python = "3.13"
+ruff = "latest"
+uv = "latest"
+
+[settings]
+python.uv_venv_auto = true
+idiomatic_version_file_enable_tools = ["python"]
+experimental = true
+
+[hooks]
+enter = "bash ./scripts/setup_project"
+
+[env]
+ENVIRONMENT = "development"

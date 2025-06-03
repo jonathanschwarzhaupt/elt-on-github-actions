@@ -1,0 +1,22 @@
+[project]
+name = "extract"
+version = "0.0.0"
+description = "Extract package for pulling data from a fictional system"
+readme = "README.md"
+authors = [
+  { name = "Jonathan Schwarzhaupt", email = "jonathan.schwarzhaupt@email.com" },
+]
+requires-python = ">=3.13"
+dependencies = [
+    "pandas>=2.2.3",
+]
+
+[project.scripts]
+extract = "extract.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/extract"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
