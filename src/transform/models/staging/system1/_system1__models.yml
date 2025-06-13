@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_system1__activity
+    description: "Staging table for activity data from System1. Contains one row per activity per month and client."
+    tests:
+      - unique:
+          column_name: "(id || '-' || mandanten_id || request_month)"
+    columns:
+      - name: id
+        description: "This is a unique identifier for the activity"
+        tests:
+          - not_null
+      - name: activity_type
+        description: "What type of activity occurred."

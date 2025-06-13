@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: stg_dimensions__master
+    description: The master dimension table
+    columns:
+      - name: project_id
+        description: "This is a unique identifier for the project."
+        tests:
+          - unique
+          - not_null
+      - name: project_name
+        description: "The name of the project."
+        tests:
+          - not_null
+      - name: city
+        description: "The city the project is located in"
+
+  - name: stg_dimensions__system1
+    description: The dimension table for system1 tracking the `project_id`
+    columns:
+      - name: mandanten_id
+        description: "The unique identifier for a 'Mandant'"
+        tests:
+          - not_null
+      - name: mandanten_name
+        description: "The name of the 'Mandant'"
+        tests:
+          - not_null
+      - name: project_id
+        description: "The ID of the project this 'Mandant' belongs to"
+        tests:
+          - not_null

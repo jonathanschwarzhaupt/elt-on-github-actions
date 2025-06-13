@@ -1,0 +1,18 @@
+transform:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "database/dwh_local.duckdb"
+      filesystems:
+        - fs: abfs
+          anon: false
+          account_name: "{{ env_var('DBT_ENV_SECRET_STORAGE_ACCOUNT_NAME_DEV') }}"
+          account_key: "{{ env_var('DBT_ENV_SECRET_STORAGE_ACCOUNT_KEY_DEV') }}"
+    prod:
+      type: duckdb
+      filesystems:
+        - fs: abfs
+          anon: false
+          account_name: "{{ env_var('DBT_ENV_SECRET_STORAGE_ACCOUNT_NAME_PROD') }}"
+          account_key: "{{ env_var('DBT_ENV_SECRET_STORAGE_ACCOUNT_KEY_PROD') }}"

@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: dimensions
+    meta:
+      external_location: "abfs://lake/dimensions/{name}.csv"
+    tables:
+      - name: dim_master
+      - name: dim_system1
