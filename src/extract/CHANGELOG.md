@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/jonathanschwarzhaupt/elt-on-github-actions/compare/extract-v0.1.2...extract-v0.2.0) (2025-06-13)
+
+
+### Features
+
+* **extract:** added comment to trigger ci ([#11](https://github.com/jonathanschwarzhaupt/elt-on-github-actions/issues/11)) ([6789974](https://github.com/jonathanschwarzhaupt/elt-on-github-actions/commit/6789974e067b4bcd66187a2c033d5ebd9055b105))
+
 ## [0.1.2](https://github.com/jonathanschwarzhaupt/elt-on-github-actions/compare/extract-v0.1.1...extract-v0.1.2) (2025-06-03)
 
 
