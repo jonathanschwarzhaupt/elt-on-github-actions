@@ -5,6 +5,7 @@ import sys
 def main() -> None:
     """Entry point for running the programm"""
 
+    # Comment to trigger CI
     env = os.getenv("ENVIRONMENT", "default")
     print(f"Starting extraction in environment: {env}")
 
