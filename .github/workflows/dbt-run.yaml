@@ -3,14 +3,14 @@ name: dbt run and test
 on: workflow_dispatch
 
 env:
-  DBT_PROFILES_DIR: .
+  DBT_PROFILES_DIR: "src/transform"
   STORAGE_ACCOUNT_NAME_PROD: ${{ secrets.STORAGE_ACCOUNT_NAME_PROD }}
   STORAGE_ACCOUNT_KEY_PROD: ${{ secrets.STORAGE_ACCOUNT_KEY_PROD }}
 
 jobs:
   run-dbt-project:
     name: Run dbt Project
-    runs-on: ubunut-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
