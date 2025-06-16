@@ -1,0 +1,29 @@
+name: dbt run and test
+
+on: workflow_dispatch
+
+env:
+  DBT_PROFILES_DIR: .
+  STORAGE_ACCOUNT_NAME_PROD: ${{ secrets.STORAGE_ACCOUNT_NAME_PROD }}
+  STORAGE_ACCOUNT_KEY_PROD: ${{ secrets.STORAGE_ACCOUNT_KEY_PROD }}
+
+jobs:
+  run-dbt-project:
+    name: Run dbt Project
+    runs-on: ubunut-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: dbt-run
+        id: dbt-run
+        uses: mwhitaker/dbt-action@dev1.7.3
+        with:
+          dbt_command: "dbt run --target prod"
+          dbt_project_folder: "src/transform"
+
+      - name: Get the result
+        if: ${{ always() }}
+        run: echo "${{ steps.dbt-run.outputs.result }}"
+        shell: bash
