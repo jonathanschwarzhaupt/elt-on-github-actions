@@ -22,15 +22,16 @@ jobs:
       - name: Install UV
         uses: astral-sh/setup-uv@v5
 
-      - name: Set up Python
-        run: uv python install
-
-      - name: Install dependencies
+      - name: Set up Python and install dependencies
         run: |
-          uv sync --locked --dev
+          uv python install
+          uv venv .venv
+          source .venv/bin/activate
+          uv sync --locked
 
       - name: Debug Path
         run: |
+          source .venv/bin/activate
           echo $PATH
           which dbt
 
