@@ -18,7 +18,7 @@ jobs:
 
       - name: dbt-run
         id: dbt-run
-        uses: mwhitaker/dbt-action@dev1.7.3
+        uses: mwhitaker/dbt-action@v1.7.3
         with:
           dbt_command: "dbt run --target prod"
           dbt_project_folder: "src/transform"
