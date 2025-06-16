@@ -1,4 +1,4 @@
-name: dbt run and test
+name: Run dbt in production
 
 on: workflow_dispatch
 
@@ -29,23 +29,8 @@ jobs:
           source .venv/bin/activate
           uv sync --locked
 
-      - name: Debug Path
-        run: |
-          source .venv/bin/activate
-          echo $PATH
-          which dbt
-
       - name: Run dbt
         id: dbt_run
         run: |
           source .venv/bin/activate
-          dbt run --target prod | tee dbt_output.log
-          # capture dbt run results from stdout
-          echo "result<<EOF" >> $GITHUB_OUTPUT
-          cat dbt_output.log >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-          rm dbt_output.log
-
-      - name: Print dbt result
-        run: |
-          echo "${{ steps.dbt_run.output.results }}"
+          dbt run --target prod
