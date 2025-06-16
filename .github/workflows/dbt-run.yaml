@@ -10,6 +10,7 @@ jobs:
   run-dbt-project:
     name: Run dbt Project
     runs-on: ubuntu-latest
+
     defaults:
       run:
         working-directory: ./src/transform
@@ -28,8 +29,20 @@ jobs:
         run: |
           uv sync --locked --dev
 
-      - name: dbt-run
-        run: dbt run --target prod
+      - name: Debug Path
+        run: |
+          echo $PATH
+          which dbt
+
+      - name: Run dbt
+        run: |
+          source .venv/bin/activate
+          dbt run --target prod
+
+      - name: Run dbt tests
+        run: |
+          source .venv/bin/activate
+          dbt test --target prod
         # id: dbt-run
         # uses: mwhitaker/dbt-action@v1.7.3
         # with:
