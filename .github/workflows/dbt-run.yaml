@@ -3,9 +3,8 @@ name: dbt run and test
 on: workflow_dispatch
 
 env:
-  DBT_PROFILES_DIR: "src/transform"
-  STORAGE_ACCOUNT_NAME_PROD: ${{ secrets.STORAGE_ACCOUNT_NAME_PROD }}
-  STORAGE_ACCOUNT_KEY_PROD: ${{ secrets.STORAGE_ACCOUNT_KEY_PROD }}
+  STORAGE_ACCOUNT_NAME_PROD: ${{ secrets.DBT_ENV_SECRET_STORAGE_ACCOUNT_NAME_PROD }}
+  STORAGE_ACCOUNT_KEY_PROD: ${{ secrets.DBT_ENV_SECRET_STORAGE_ACCOUNT_KEY_PROD }}
 
 jobs:
   run-dbt-project:
@@ -20,6 +19,7 @@ jobs:
         id: dbt-run
         uses: mwhitaker/dbt-action@v1.7.3
         with:
+          # dbt_command: "dbt run --target prod --profiles-dir ."
           dbt_command: "dbt run --target prod"
           dbt_project_folder: "src/transform"
 
