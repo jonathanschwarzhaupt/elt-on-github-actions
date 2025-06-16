@@ -29,14 +29,15 @@ jobs:
           uv sync --locked --dev
 
       - name: dbt-run
-        id: dbt-run
-        uses: mwhitaker/dbt-action@v1.7.3
-        with:
-          # dbt_command: "dbt run --target prod --profiles-dir ."
-          dbt_command: "dbt run --target prod"
-          dbt_project_folder: "src/transform"
+        run: dbt run --target prod
+        # id: dbt-run
+        # uses: mwhitaker/dbt-action@v1.7.3
+        # with:
+        # dbt_command: "dbt run --target prod --profiles-dir ."
+        # dbt_command: "dbt run --target prod"
+        # dbt_project_folder: "src/transform"
 
-      - name: Get the result
-        if: ${{ always() }}
-        run: echo "${{ steps.dbt-run.outputs.result }}"
-        shell: bash
+      # - name: Get the result
+      #if: ${{ always() }}
+      # run: echo "${{ steps.dbt-run.outputs.result }}"
+      # shell: bash
