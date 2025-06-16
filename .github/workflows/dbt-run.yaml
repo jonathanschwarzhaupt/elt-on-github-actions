@@ -10,6 +10,9 @@ jobs:
   run-dbt-project:
     name: Run dbt Project
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./src/transform
 
     steps:
       - name: Checkout code
@@ -31,7 +34,7 @@ jobs:
         with:
           # dbt_command: "dbt run --target prod --profiles-dir ."
           dbt_command: "dbt run --target prod"
-          dbt_project_folder: "src/transform"
+          # dbt_project_folder: "src/transform"
 
       - name: Get the result
         if: ${{ always() }}
