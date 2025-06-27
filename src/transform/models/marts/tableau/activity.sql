@@ -1,6 +1,7 @@
 {{
-    config(materialized='external',
-    location='abfs://analytics/activity.parquet')
+    config(
+      materialized='external', location='abfs://analytics/activity.parquet' if env_var('ENVIRONMENT') == 'prod' else 'view',
+    )
 }}
 
 

@@ -3,3 +3,4 @@ database/
 target/
 dbt_packages/
 .user.yml
+view
