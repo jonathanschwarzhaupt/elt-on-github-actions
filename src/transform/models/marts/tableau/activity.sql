@@ -1,9 +1,9 @@
 {{
-    config(
-      materialized='external', location='abfs://analytics/activity.parquet' if env_var('ENVIRONMENT') == 'prod' else 'view',
-    )
+  config(
+    materialized='external' if env_var('ENVIRONMENT') == 'prod' else 'view',
+    location='abfs://analytics/activity.parquet' if env_var('ENVIRONMENT') == 'prod' else none,
+  )
 }}
-
 
 with
 activites as (
